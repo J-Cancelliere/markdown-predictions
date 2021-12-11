@@ -14,7 +14,6 @@ class DataParser:
         dfs = []
         for f in CSV_NAMES:
             # Read DF from CSV file
-            print(CSV_PATH + f)
             add_df = pd.read_csv(CSV_PATH + f)
             
             # Clean up and replace column names for each DF
@@ -48,4 +47,4 @@ class DataParser:
         return self.sales_data
 
 if __name__ == "__main__":
-    print(CSV_NAMES)
+    print(DataParser().read_sales_data())
