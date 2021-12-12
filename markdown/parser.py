@@ -44,6 +44,24 @@ class DataParser:
             dfs.append(add_df)
         self.sales_data = pd.concat(dfs)
         self.sales_data.reset_index(inplace = True)
+        
+        # Drop irrelevant columns
+        to_drop = ["index",
+                "code_op_com",
+                "stk_disporalcdegenn",
+                "stk_dispopour_reassortn",
+                "stk_disporalcdegenn",
+                "tx_ecoul_sur_engtcumuln",
+                "engagement_globaln",
+                "vte_moyennesrct/point_de_venten",
+                "libelle_op_com",
+                "vitrine_collection",
+                "famille",
+                "sous_famille",
+                "refcol",
+                "lib_refcol",
+                "picto"]
+        self.sales_data.drop(columns = to_drop, inplace = True)
         return self.sales_data
 
 if __name__ == "__main__":
