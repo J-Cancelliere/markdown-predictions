@@ -1,4 +1,5 @@
 """Funtions used to clean up data after initial import"""
+import numpy as np
 
 def replace_commas(text):
     """ Replaces any commas in the input string with a decimal"""
