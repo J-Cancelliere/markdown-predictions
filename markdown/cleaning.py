@@ -12,7 +12,7 @@ class CleanData:
         columns = list(self.sales_data.columns)
         data = self.sales_data.copy()
         for c in columns:
-            data[c] = data[c].map(markdown.toolkit.make_dash_null)
+            data[c] = data[c].map(markdown.toolkit.make_text_null)
             data[c] = data[c].map(markdown.toolkit.remove_percent)
             data[c] = data[c].map(markdown.toolkit.remove_euro)
             if c == "pvc_france":
@@ -23,4 +23,4 @@ class CleanData:
         return data.dropna()
     
 if __name__ == "__main__":
-    print(CleanData().get_clean_data))
+    print(CleanData().get_clean_data())

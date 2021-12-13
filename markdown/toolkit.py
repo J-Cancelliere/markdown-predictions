@@ -11,17 +11,12 @@ def remove_comma(text):
     text = str(text).replace(",","").strip()
     return text
 
-def make_dash_null(text):
+def make_text_null(text):
     """ Changes the dash (-) to a np.nan"""
-    return np.nan if text == "-" else text
-
-def make_inconnu_null(text):
-    """ Changes the word 'inconnu' to a np.nan"""
-    return np.nan if text.lower() == "inconnu" else text
-
-def make_nan_null(text):
-    """ Changes the word 'nan' to a np.nan"""
-    return np.nan if text.lower() == "nan" else text
+    if str(text).lower() in ["-","nan","inconnu"]:
+        return np.nan
+    else:
+        return text
 
 def remove_euro(text):
     """ Removes the euro symbol from input text"""
